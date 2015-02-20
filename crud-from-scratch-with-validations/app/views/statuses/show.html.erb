@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+  <div class="panel-heading"> <h1>Status</h1><%= link_to 'Update Status', edit_status_path(@status) %>
+</div>
+  <div class="panel-body">
+    <table class="table table-bordered">
+     <ul>
+      <%= @status.status %> <br>
+      <%= @status.user %> <br>
+    </ul>
+  </table>
+  </div>
+</div>

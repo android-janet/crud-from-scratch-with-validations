@@ -1,2 +1,19 @@
 <h1>Status Updates</h1>
 <h2><%= link_to 'Click here to create a status update.', new_status_path %> </h2>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading"> <h1>Status</h1><%= link_to 'Update Status', edit_status_path(@status) %>
+</div>
+  <div class="panel-body">
+    <table class="table table-bordered">
+     <ul>
+      <% @status.each do |s| %>
+      <%= s.status %>
+      <%= s.user %>
+      <%= pluralize(s.likes.count, "likes") %>
+      <%= button_to "Like", like %>
+    </ul>
+  </table>
+  </div>
+</div>

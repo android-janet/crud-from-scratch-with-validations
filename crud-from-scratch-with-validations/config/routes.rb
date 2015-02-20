@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'status/index'
-
-  get 'likes/index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -18,7 +15,10 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
 
- resources :statuses
+ resources :statuses do
+ member do
+   post 'like'
+ end
 
   # Example resource route with options:
   #   resources :products do
