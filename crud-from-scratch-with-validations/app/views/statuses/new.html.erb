@@ -1,0 +1,17 @@
+<h1> What are you up to? </h1>
+<h2> Fill in your status. </h2>
+
+<%= form_for :status do |f| %>
+<p>
+  <%= f.label :user %> <br>
+  <%= f.text_field :user %>
+</p>
+<p>
+  <%= f.label :status %> <br>
+  <%= f.text_field :status %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
