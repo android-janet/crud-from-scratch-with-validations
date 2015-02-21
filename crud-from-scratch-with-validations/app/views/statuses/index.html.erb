@@ -1,19 +1,27 @@
-<h1>Status Updates</h1>
-<h2><%= link_to 'Click here to create a status update.', new_status_path %> </h2>
+<div class= "container">
+  <div class="panel-header"> <h1>Status</h1><h2><%= link_to 'Click here to create a status update.', new_status_path %></h2>
+   </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>Name</th>
+        <th>Likes</th>
+      </tr>
+    </thead>
 
+    <tbody>
+      <% @statuses.each do |s| %>
 
-<div class="panel panel-default">
-  <div class="panel-heading"> <h1>Status</h1><%= link_to 'Update Status', edit_status_path(@status) %>
-</div>
-  <div class="panel-body">
-    <table class="table table-bordered">
-     <ul>
-      <% @status.each do |s| %>
-      <%= s.status %>
-      <%= s.user %>
-      <%= pluralize(s.likes.count, "likes") %>
-      <%= button_to "Like", like %>
-    </ul>
+      <tr>
+        <td><%= link_to s.status, status_path(s) %></td>
+        <td><%= s.user %></td>
+        <td><%= pluralize(s.likes.count, "likes") %></td>
+        <td><%= button_to "Like", like_status_path(s), method: :post %></td>
+      </tr>
+      <% end %>
+
+    </tbody>
   </table>
   </div>
 </div>

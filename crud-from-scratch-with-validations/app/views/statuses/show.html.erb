@@ -1,5 +1,8 @@
 <div class="panel panel-default">
-  <div class="panel-heading"> <h1>Status</h1><%= link_to 'Update Status', edit_status_path(@status) %>
+  <div class="panel-heading"> <h1>Status</h1><%= link_to 'Update Status', edit_status_path(@status) %><br>
+    <%= link_to 'Delete Status', status_path(@status), method: :delete %><br>
+    <%= link_to 'Home', statuses_path(@status) %>
+
 </div>
   <div class="panel-body">
     <table class="table table-bordered">
