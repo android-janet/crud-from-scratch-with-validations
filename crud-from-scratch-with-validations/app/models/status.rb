@@ -4,7 +4,8 @@ class Status < ActiveRecord::Base
   validates :status, presence: true
 
   status = Status.new(status: "A new status")
-  status.valid? # => true
-  status.errors 
-    # => ["Status can't be blank."]
+  status.errors.messages # => {}
+  status.valid? # => false
+  status.errors.messages # => {status:["can't be blank."]}
+  
 end

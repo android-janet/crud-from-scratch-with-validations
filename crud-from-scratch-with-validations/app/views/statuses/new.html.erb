@@ -1,6 +1,8 @@
 <div class="page-header">
-    <h1>What are you up to? <br> <small>Create a new status.</small></h1>
+  <h1>What are you up to? <br> <small>Create a new status.</small></h1>
 </div>
+
+<%= render partial: 'shared/errors', locals: {object: @status} %>
 
 <%= form_for @status do |f| %>
 <p>
@@ -15,4 +17,5 @@
 <p>
   <%= f.submit %>
 </p>
+
 <% end %>

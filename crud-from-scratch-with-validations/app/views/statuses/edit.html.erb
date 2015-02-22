@@ -2,6 +2,8 @@
     <h1>Update Status</h1>
 </div>
 
+<%= render partial: 'shared/errors', locals: {object: @status} %>
+
 <%= form_for @status do |f| %>
 
 <p>

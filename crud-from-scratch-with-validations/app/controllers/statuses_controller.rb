@@ -25,7 +25,7 @@ class StatusesController < ApplicationController
     if @status.update(status_params)
       redirect_to status_path, notice: 'Status is successfully updated.'
     else
-      render :update
+      render :edit
     end
   end
 
